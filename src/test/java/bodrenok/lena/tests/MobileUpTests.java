@@ -14,11 +14,10 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.byValue;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
-import static org.openqa.selenium.remote.tracing.EventAttribute.setValue;
+
 
 public class MobileUpTests {
 
@@ -62,8 +61,8 @@ public class MobileUpTests {
         step("Fill form", () -> {
             $("#customer-name").setValue("Name");
             $("#customer-email").setValue("Email");
-           // $("#customer-tel").setValue("+7 (123) 111-11-11"); // не работает
-            //$("#customer-tel").$("[title]").setValue("+7 (123) 111-11-11"); // не работает
+            // $("#customer-tel").setValue("+7 (123) 111-11-11"); // не работает
+            // $("#customer-tel").$("[title]").setValue("+7 (123) 111-11-11"); // не работает
             $("#customer-company").setValue("Компания");
             $("#project-description").setValue("Пара слов");
             $("#customer-price").setValue("1000000");
@@ -71,9 +70,7 @@ public class MobileUpTests {
             $(".project-form__submit-btn").scrollIntoView(false).click();
         });
         step("Check results", () -> {
-            //$(byAttribute("data-error-msg", "Что-то не так с адресом e-mail")).shouldBe(visible);
-            //$("[data-error-msg=Что-то не так с адресом e-mail]").shouldBe(visible);
-            //$(".project-form__field-wrapper").findBy(text("Что-то не так с адресом e-mail")).shouldBe(visible);
+            // $(".project-form__field").shouldHave(pseudo(":after", "content", "Что-то не так с адресом e-mail"));
         });
     }
 
@@ -89,17 +86,13 @@ public class MobileUpTests {
         });
     }
 
-
-
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
-
     }
-
 }
 
 
