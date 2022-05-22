@@ -18,19 +18,21 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
-        String login = config.login();
-        String password = config.password();
-        String remote = System.getProperty("remote", "selenoid.autotests.cloud/wd/hub");
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
-        Configuration.remote = "https://" + login + ":" + password + "@" + remote;
+       // String login = config.login();
+       // String password = config.password();
+      //  String remote = System.getProperty("remote", "selenoid.autotests.cloud/wd/hub");
 
-   //     String propertyBrowser = System.getProperty("propertyBrowser", "chrome");
-    //    String propertyVersion = System.getProperty("propertyVersion", "100");
-    //    String propertyBrowserSize = System.getProperty("propertyBrowserSize", "1920x1080");
+     //   Configuration.remote = "https://" + login + ":" + password + "@" + remote;
 
-    //    Configuration.browser = propertyBrowser;
-     //   Configuration.browserVersion = propertyVersion;
-    //    Configuration.browserSize = propertyBrowserSize;
+        String propertyBrowser = System.getProperty("propertyBrowser", "chrome");
+        String propertyVersion = System.getProperty("propertyVersion", "100");
+        String propertyBrowserSize = System.getProperty("propertyBrowserSize", "1920x1080");
+
+        Configuration.browser = propertyBrowser;
+        Configuration.browserVersion = propertyVersion;
+        Configuration.browserSize = propertyBrowserSize;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
