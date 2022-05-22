@@ -11,20 +11,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
-
 public class TestBase {
+
+    static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+    static String selenoid = System.getProperty("selenoid", "selenoid.autotests.cloud/wd/hub");
+
     @BeforeAll
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
-
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-
-       // String login = config.login();
-       // String password = config.password();
-      //  String remote = System.getProperty("remote", "selenoid.autotests.cloud/wd/hub");
-
-     //   Configuration.remote = "https://" + login + ":" + password + "@" + remote;
 
         String propertyBrowser = System.getProperty("propertyBrowser", "chrome");
         String propertyVersion = System.getProperty("propertyVersion", "100");
@@ -33,6 +27,8 @@ public class TestBase {
         Configuration.browser = propertyBrowser;
         Configuration.browserVersion = propertyVersion;
         Configuration.browserSize = propertyBrowserSize;
+
+        Configuration.remote = "https://" + config.login() + ":" + config.password() + "@" + selenoid;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
