@@ -1,38 +1,23 @@
 package bodrenok.lena.tests;
 
 import bodrenok.lena.domain.MenuItem;
-import bodrenok.lena.helpers.Attach;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
-
 public class MobileUpTests {
-
-    @BeforeAll
-    static void setUp() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        baseUrl = "https://mobileup.ru";
-    }
 
     @DisplayName("Checking main page menu")
     @EnumSource(MenuItem.class)
     @ParameterizedTest()
     void mainMenuTest(MenuItem testData) {
-        step("Open " + baseUrl, () -> Selenide.open(baseUrl));
         step("Check item: " + testData.rusName, () -> {
             $(".main-nav__list").$(byText(testData.rusName)).click();
             $(".grid").shouldBe(visible);
@@ -42,7 +27,6 @@ public class MobileUpTests {
     @DisplayName("Checking vacancy QA automation engineer")
     @Test
     void vacancyTest() {
-        step("Open " + baseUrl, () -> Selenide.open(baseUrl));
         step("Select 'Вакансии'", () -> {
             $$(".main-nav__link").findBy(text("Вакансии")).click();
         });
@@ -54,7 +38,6 @@ public class MobileUpTests {
     @DisplayName("Checking form") // доделать
     @Test
     void fillFormTest() {
-        step("Open " + baseUrl, ()-> Selenide.open(baseUrl));
         step("Select 'Оставить заявку'", () -> {
             $(".intro__content").$("#button").click();
         });
@@ -77,21 +60,12 @@ public class MobileUpTests {
     @DisplayName("Checking the Telegram link")
     @Test
     void linkTest() {
-        step("Open " + baseUrl, () -> Selenide.open(baseUrl));
         step("Select 'Tg'", () -> {
             $$(".social-links__item").findBy(text("Tg")).click();
         });
         step("Check open", () -> {
             Assertions.assertEquals(2, WebDriverRunner.getWebDriver().getWindowHandles().size());
         });
-    }
-
-    @AfterEach
-    void addAttachments() {
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
     }
 }
 

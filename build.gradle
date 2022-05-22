@@ -16,13 +16,13 @@ def allureVersion = "2.17.3",
 
 allure {
     report {
-        version.set(allureVersion)
+        version.set("2.17.3") //версия Allure Report (https://github.com/allure-framework/allure2)
     }
     adapter {
-        aspectjWeaver.set(true)
+        aspectjWeaver.set(true) // обработка аннотации @Step
         frameworks {
             junit5 {
-                adapterVersion.set(allureVersion)
+                adapterVersion.set("2.17.3") //версия Allure JUnit5 (https://github.com/allure-framework/allure-java)
             }
         }
     }
@@ -31,7 +31,7 @@ allure {
 dependencies {
     testImplementation(
             "com.codeborne:selenide:$selenideVersion",
-            "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.qameta.allure:allure-selenide:2.17.3",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.aeonbits.owner:owner:$ownerVersion",
             "org.assertj:assertj-core:$assertjVersion",
