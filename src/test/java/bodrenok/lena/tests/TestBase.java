@@ -9,8 +9,8 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 
 public class TestBase {
     @BeforeAll
@@ -23,15 +23,14 @@ public class TestBase {
         String remote = System.getProperty("remote", "selenoid.autotests.cloud/wd/hub");
 
         Configuration.remote = "https://" + login + ":" + password + "@" + remote;
-        baseUrl = "https://mobileup.ru";
 
-       // String propertyBrowser = System.getProperty("propertyBrowser", "chrome");
-      //  String propertyVersion = System.getProperty("propertyVersion", "100");
-      //  String propertyBrowserSize = System.getProperty("propertyBrowserSize", "1920x1080");
+        String propertyBrowser = System.getProperty("propertyBrowser", "chrome");
+        String propertyVersion = System.getProperty("propertyVersion", "100");
+        String propertyBrowserSize = System.getProperty("propertyBrowserSize", "1920x1080");
 
-     //   Configuration.browser = propertyBrowser;
-    //    Configuration.browserVersion = propertyVersion;
-     //   Configuration.browserSize = propertyBrowserSize;
+        Configuration.browser = propertyBrowser;
+        Configuration.browserVersion = propertyVersion;
+        Configuration.browserSize = propertyBrowserSize;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
