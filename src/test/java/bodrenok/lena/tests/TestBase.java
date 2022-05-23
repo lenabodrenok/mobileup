@@ -23,6 +23,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://mobileup.ru/");
         Configuration.remote = "https://" + config.login() + ":" + config.password() + "@" + selenoid;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
