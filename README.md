@@ -31,7 +31,6 @@
 - Проверка наличия вакансии QA auto
 - Проверка заполнения формы обратной связи
 - Проверка работы ссылки на Телеграм-канал
-- Проверка скачивания файла с презентацией
 
 ## :heavy_check_mark: Сборка в [Jenkins](https://jenkins.autotests.cloud/job/012-lenabodrenok-mobileup_tests/) <a name="сборка-в-jenkins"></a>
 
@@ -45,9 +44,10 @@ gradle clean test
 clean
 test
 -Dbrowser=${BROWSER}
--Dbrowser=${BROWSER_VERSION}
+-DbrowserVersion=${BROWSER_VERSION}
 -DbrowserSize=${BROWSER_SIZE}
--Dselenoid_url=${SELENOID_URL}
+-DbaseUrl=${BASE_URL}
+-Dremote=${REMOTE}
 ```
 
 ## :heavy_check_mark: Allure отчет <a name="allure-отчет"></a>
