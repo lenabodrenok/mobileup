@@ -8,11 +8,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
-import static io.qameta.allure.Allure.step;
 
 public class TestBase {
 
@@ -30,6 +27,7 @@ public class TestBase {
         Configuration.browser = propertyBrowser;
         Configuration.browserVersion = propertyVersion;
         Configuration.browserSize = propertyBrowserSize;
+        Configuration.baseUrl = "https://mobileup.ru/";
 
         Configuration.remote = "https://" + config.login() + ":" + config.password() + "@" + selenoid;
 
@@ -37,13 +35,6 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-    }
-
-    @BeforeEach
-    void openPage() {
-        step("Open page for testing", () -> {
-            open("https://mobileup.ru/");
-        });
     }
 
     @AfterEach
