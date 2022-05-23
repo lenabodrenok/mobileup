@@ -42,7 +42,7 @@ public class TestBase {
     @BeforeEach
     void openPage() {
         step("Open page for testing", () -> {
-            open("https://qa.guru/");
+            open("https://mobileup.ru/");
         });
     }
 
