@@ -18,16 +18,11 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
-        String selenoid = System.getProperty("selenoid", "selenoid.autotests.cloud/wd/hub");
-        String propertyBrowser = System.getProperty("propertyBrowser", "chrome");
-        String propertyVersion = System.getProperty("propertyVersion", "100");
-        String propertyBrowserSize = System.getProperty("propertyBrowserSize", "1920x1080");
+        String selenoid = System.getProperty("selenoidUrl", "selenoid.autotests.cloud/wd/hub");
 
-        Configuration.browser = propertyBrowser;
-        Configuration.browserVersion = propertyVersion;
-        Configuration.browserSize = propertyBrowserSize;
-        Configuration.baseUrl = "https://mobileup.ru/";
-
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.remote = "https://" + config.login() + ":" + config.password() + "@" + selenoid;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();

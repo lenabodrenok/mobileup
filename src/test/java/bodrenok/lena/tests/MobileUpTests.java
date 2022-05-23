@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
@@ -19,7 +18,7 @@ public class MobileUpTests extends TestBase {
     @ParameterizedTest()
     void mainMenuTest(MenuItem testData) {
         step("Open page for testing", () -> {
-            open(baseUrl);
+            open("https://mobileup.ru/");
         });
         step("Check item: " + testData.rusName, () -> {
             $(".main-nav__list").$(byText(testData.rusName)).click();
@@ -31,7 +30,7 @@ public class MobileUpTests extends TestBase {
     @Test
     void vacancyTest() {
         step("Open page for testing", () -> {
-            open(baseUrl);
+            open("https://mobileup.ru/");
         });
         step("Select 'Вакансии'", () -> {
             $$(".main-nav__link").findBy(text("Вакансии")).click();
@@ -45,7 +44,7 @@ public class MobileUpTests extends TestBase {
     @Test
     void fillFormTest() {
         step("Open page for testing", () -> {
-            open(baseUrl);
+            open("https://mobileup.ru/");
         });
         step("Select 'Оставить заявку'", () -> {
             $(".intro__content").$("#button").click();
@@ -70,7 +69,7 @@ public class MobileUpTests extends TestBase {
     @Test
     void linkTest() {
         step("Open page for testing", () -> {
-            open(baseUrl);
+            open("https://mobileup.ru/");
         });
         step("Select 'Tg'", () -> {
             $$(".social-links__item").findBy(text("Tg")).click();
