@@ -21,8 +21,9 @@
 <a href="https://gradle.org/"><img src="/images/Gradle.svg" width="50" height="50"  alt="Gradle"/></a>
 <a href="https://selenide.org/"><img src="/images/Selenide.svg" width="50" height="50"  alt="Selenide"/></a>
 <a href="https://aerokube.com/selenoid/"><img src="/images/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a>
-<a href="https://github.com/allure-framework/allure2"><img src="/images/Allure_EE.svg" width="50" height="50"  alt="Allure"/></a>
+<a href="https://github.com/allure-framework/allure2"><img src="/images/Allure_Report.svg" width="50" height="50"  alt="Allure"/></a>
 <a href="https://www.jenkins.io/"><img src="/images/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>
+<a href="https://telegram.org/"><img src="/images/Telegram.svg" width="50" height="50"  alt="Telegram"/></a>  
 </p>
 
 ## :heavy_check_mark: Реализованные проверки <a name="реализованные-проверки"></a>
