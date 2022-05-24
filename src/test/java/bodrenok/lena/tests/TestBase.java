@@ -18,13 +18,13 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
-        String selenoid = System.getProperty("selenoidUrl", "selenoid.autotests.cloud/wd/hub");
+        //String selenoid = System.getProperty("selenoidUrl", "selenoid.autotests.cloud/wd/hub");
 
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.baseUrl = System.getProperty("baseUrl", "https://mobileup.ru/");
-        Configuration.remote = "https://" + config.login() + ":" + config.password() + "@" + selenoid;
+        Configuration.remote = "https://" + config.login() + ":" + config.password() + "@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
