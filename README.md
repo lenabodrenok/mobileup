@@ -47,7 +47,6 @@ test
 -DbrowserVersion=${BROWSER_VERSION}
 -DbrowserSize=${BROWSER_SIZE}
 -DbaseUrl=${BASE_URL}
--Dremote=${REMOTE}
 ```
 
 ## :heavy_check_mark: Allure отчет <a name="allure-отчет"></a>

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
@@ -62,7 +61,7 @@ public class MobileUpTests extends TestBase {
         step("Select 'Tg'", () -> {
             $$(".social-links__item").findBy(text("Tg")).click();
         });
-        step("Check open", () -> {
+        step("Check open new tab", () -> {
             Assertions.assertEquals(2, WebDriverRunner.getWebDriver().getWindowHandles().size());
         });
     }
