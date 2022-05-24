@@ -17,9 +17,6 @@ public class MobileUpTests extends TestBase {
     @EnumSource(MenuItem.class)
     @ParameterizedTest()
     void mainMenuTest(MenuItem testData) {
-        step("Open page for testing", () -> {
-            open(baseUrl);
-        });
         step("Check item: " + testData.rusName, () -> {
             $(".main-nav__list").$(byText(testData.rusName)).click();
             $(".grid").shouldBe(visible);
@@ -29,9 +26,6 @@ public class MobileUpTests extends TestBase {
     @DisplayName("Checking vacancy QA automation engineer")
     @Test
     void vacancyTest() {
-        step("Open page for testing", () -> {
-            open(baseUrl);
-        });
         step("Select 'Вакансии'", () -> {
             $$(".main-nav__link").findBy(text("Вакансии")).click();
         });
@@ -43,9 +37,6 @@ public class MobileUpTests extends TestBase {
     @DisplayName("Checking form")
     @Test
     void fillFormTest() {
-        step("Open page for testing", () -> {
-            open(baseUrl);
-        });
         step("Select 'Оставить заявку'", () -> {
             $(".intro__content").$("#button").click();
         });
@@ -68,9 +59,6 @@ public class MobileUpTests extends TestBase {
     @DisplayName("Checking Telegram link")
     @Test
     void linkTest() {
-        step("Open page for testing", () -> {
-            open(baseUrl);
-        });
         step("Select 'Tg'", () -> {
             $$(".social-links__item").findBy(text("Tg")).click();
         });
