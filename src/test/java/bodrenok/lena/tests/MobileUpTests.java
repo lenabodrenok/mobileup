@@ -5,8 +5,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -41,7 +40,7 @@ public class MobileUpTests extends TestBase {
         });
     }
 
-    @DisplayName("Checking form") // доделать
+    @DisplayName("Checking form")
     @Test
     void fillFormTest() {
         step("Open page for testing", () -> {
@@ -53,8 +52,7 @@ public class MobileUpTests extends TestBase {
         step("Fill form", () -> {
             $("#customer-name").setValue("Name");
             $("#customer-email").setValue("Email");
-            // $("#customer-tel").setValue("+7 (123) 111-11-11"); // не работает
-            // $("#customer-tel").$("[title]").setValue("+7 (123) 111-11-11"); // не работает
+            $("#customer-tel").setValue("");
             $("#customer-company").setValue("Компания");
             $("#project-description").setValue("Пара слов");
             $("#customer-price").setValue("1000000");
@@ -62,7 +60,8 @@ public class MobileUpTests extends TestBase {
             $(".project-form__submit-btn").scrollIntoView(false).click();
         });
         step("Check results", () -> {
-            // $(".project-form__field").shouldHave(pseudo(":after", "content", "Что-то не так с адресом e-mail"));
+            $(".project-form__field--invalid").shouldHave(pseudo(":after", "content", "\"Что-то не так с адресом e-mail\""));
+            $(".project-form__field--invalid", 1).shouldHave(pseudo(":after", "content", "\"Пожалуйста, заполните это поле\""));
         });
     }
 
