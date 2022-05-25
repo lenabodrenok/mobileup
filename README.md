@@ -33,6 +33,9 @@
 - Проверка работы ссылки на Телеграм-канал
 
 ## :heavy_check_mark: Сборка в [Jenkins](https://jenkins.autotests.cloud/job/012-lenabodrenok-mobileup_tests/) <a name="сборка-в-jenkins"></a>
+<p align="center">
+<img title="Jenkins Dashboard" src="/images/Jenkins_main.png">
+</p>
 
 ## :heavy_check_mark: Запуск тестов <a name="запуск-тестов"></a>
 - [x] Локальный запуск тестов:
@@ -50,11 +53,19 @@ test
 ```
 
 ## :heavy_check_mark: Allure отчет <a name="allure-отчет"></a>
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Главный экран отчета  
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Страница с проведенными тестами  
-#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Основной дашборд  
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Главный экран отчета  
+<p align="center">
+<img title="Allure Owerview" src="/images/Allure Report_main.png">
+</p>
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Страница с проведенными тестами  
+<p align="center">
+<img title="Allure Suites" src="/images/Allure Report_suites.png">
+</p>
 
 ## :heavy_check_mark: Уведомления в Telegram с использованием бота <a name="уведомления-в-telegram-с-использованием-бота"></a>
 
 ## :heavy_check_mark: Пример запуска теста в Selenoid <a name="пример-запуска-теста-в-selenoid"></a>
-
+<p align="center">
+<img title="Selenoid Video" src="/images/attach-video.gif">
+</p>
