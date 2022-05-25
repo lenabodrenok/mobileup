@@ -38,7 +38,7 @@
 <img title="Jenkins Dashboard" src="/images/Jenkins_main.png">
 </p>
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Параметры сборки  
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Выбор параметров сборки  
 <p align="center">
 <img title="Jenkins Build" src="/images/Jenkins_build.png">
 </p>
