@@ -64,6 +64,9 @@ test
 </p>
 
 ## :heavy_check_mark: Уведомления в Telegram с использованием бота <a name="уведомления-в-telegram-с-использованием-бота"></a>
+<p align="center">
+<img title="Telegram Bot" src="/images/Telegram_bot.jpg">
+</p>
 
 ## :heavy_check_mark: Пример запуска теста в Selenoid <a name="пример-запуска-теста-в-selenoid"></a>
 <p align="center">
