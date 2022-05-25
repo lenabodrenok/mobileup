@@ -33,8 +33,14 @@
 - Проверка работы ссылки на Телеграм-канал
 
 ## :heavy_check_mark: Сборка в [Jenkins](https://jenkins.autotests.cloud/job/012-lenabodrenok-mobileup_tests/) <a name="сборка-в-jenkins"></a>
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Основная информация  
 <p align="center">
 <img title="Jenkins Dashboard" src="/images/Jenkins_main.png">
+</p>
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Параметры сборки  
+<p align="center">
+<img title="Jenkins Build" src="/images/Jenkins_build.png">
 </p>
 
 ## :heavy_check_mark: Запуск тестов <a name="запуск-тестов"></a>
@@ -50,6 +56,7 @@ test
 -DbrowserVersion=${BROWSER_VERSION}
 -DbrowserSize=${BROWSER_SIZE}
 -DbaseUrl=${BASE_URL}
+-DselenoidUrl=${REMOTE}
 ```
 
 ## :heavy_check_mark: Allure отчет <a name="allure-отчет"></a>
