@@ -40,7 +40,7 @@
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Выбор параметров сборки  
 <p align="center">
-<img title="Jenkins Build" src="/images/">    
+<img title="Jenkins Build" src="/images/Jenkins_parameters.png">    
 </p>
 
 ## :heavy_check_mark: Запуск тестов <a name="запуск-тестов"></a>
