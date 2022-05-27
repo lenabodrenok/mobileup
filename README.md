@@ -32,7 +32,7 @@
 - Проверка заполнения формы обратной связи
 - Проверка работы ссылки на Телеграм-канал
 
-## :heavy_check_mark: Сборка в [Jenkins](https://jenkins.autotests.cloud/job/012-lenabodrenok-mobileup_tests/) <a name="сборка-в-jenkins"></a>
+## :heavy_check_mark: [Сборка](https://jenkins.autotests.cloud/job/012-lenabodrenok-mobileup_tests/) в Jenkins <a name="сборка-в-jenkins"></a>
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Основная информация  
 <p align="center">
 <img title="Jenkins Dashboard" src="/images/Jenkins_main.png">
