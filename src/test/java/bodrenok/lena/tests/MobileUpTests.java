@@ -43,8 +43,8 @@ public class MobileUpTests extends TestBase {
             $("#customer-name").setValue("Name");
             $("#customer-email").setValue("Email");
             $("#customer-tel").setValue("");
-            $("#customer-company").setValue("Компания");
-            $("#project-description").setValue("Пара слов");
+            $("#customer-company").setValue("Company");
+            $("#project-description").setValue("Couple of words");
             $("#customer-price").setValue("1000000");
             $("#load-file").uploadFromClasspath("file.png");
             $(".project-form__submit-btn").scrollIntoView(false).click();
